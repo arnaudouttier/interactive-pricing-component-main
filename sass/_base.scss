@@ -17,5 +17,13 @@ $dark-desaturated-blue : hsl(227, 35%, 25%);
 
 $main-font : 'Manrope',
 sans-serif;
+$font-size: 15px;
 $font-bold : 600;
 $font-bolder : 800;
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: $main-font;
+    font-size: $font-size;
+}
