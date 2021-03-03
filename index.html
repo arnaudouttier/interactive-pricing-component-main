@@ -1,75 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-    <link rel="icon" type="image/png" sizes="32x32"
-      href="./images/favicon-32x32.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap"
-      rel="stylesheet">
-      <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Frontend Mentor | Interactive pricing component</title>
-  </head>
-  <body>
+</head>
+
+<body>
 
     <div class="page">
 
-      <header>
-        <div class="header__title">
-          <h3>
-            Simple, traffic-based pricing
-          </h3>
-        </div>
-        <div class="header__content">
-          <p>
-            Sign-up for our 30-day trial. No credit card required.
-          </p>
-        </div>
-      </header><!-- header -->
+        <header id="header">
+            <div class="header__title">
+                <h3>
+                    Simple, traffic-based pricing
+                </h3>
+            </div>
+            <div class="header__content">
+                <p>Sign-up for our 30-day trial.</p>
+                <p>No credit card required.</p>
+            </div>
+        </header>
+        <!-- header -->
 
-      <main>
-        <div class="card">
-          <div class="card__content">
-            <div class="card__content-title">
-              <h5>
-                Pageviews
-              </h5>
-            </div>
-            <div class="card_content-input">
-              <p>
-                $ /month
-              </p>
-            </div>
-            <div class="card__content-options">
-              <p>
-                Monthly Billing
-                Yearly Billing 25% discount
-              </p>
-            </div>
-          </div>
-          <div class="card__footer">
-            <div class="card__footer-list">
-              <ul>
-                <li>Unlimited websites</li>
-                <li>100% data ownership</li>
-                <li>Email reports</li>
-              </ul>
-            </div>
-            <div class="card__content-button">
-              <button>Start my trial</button>
-            </div>
-          </div>
-        </div>
-      </main><!-- main -->
+        <main id="main">
+            <div class="card">
+                <div class="card__content">
+                    <div class="card__content-title">
+                        <h5>Pageviews</h5>
+                    </div>
+                    <div class="card__content-input">
+                        <input class="input-range" type="range">
+                    </div>
+                    <div class="card__content-price">
+                        <p class="input-price"> $ /month </p>
+                    </div>
+                </div>
+                <div class="card__content-options">
+                    <p>Monthly Billing </p>
+                    <div class="card__content-options-checkbox">
+                        <div class="toggle toggle--daynight">
+                            <input type="checkbox" id="toggle--daynight" class="toggle--checkbox">
+                            <label class="toggle--btn" for="toggle--daynight">
+                                <span class="toggle--feature"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <p>Yearly Billing </p>
+                    <p class="btn btn--discount" >25%</p>
+                    <p>discount</p>
+                </div>
 
-    </div><!-- .page -->
+                <div class="card__footer">
+                    <div class="card__footer-list">
+                        <ul>
+                            <li>
+                                <img src="images/icon-check.svg" alt="">
+                                <p>Unlimited websites</p>
+                            </li>
+                            <li>
+                                <img src="images/icon-check.svg" alt="">
+                                <p>100% data ownership</p>
+                            </li>
+                            <li>
+                                <img src="images/icon-check.svg" alt="">
+                                <p>Email reports</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card__footer-button">
+                        <button class="btn">Start my trial</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- main -->
 
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge"
-        target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
     </div>
-  </body>
+    <!-- .page -->
+
+</body>
+
 </html>

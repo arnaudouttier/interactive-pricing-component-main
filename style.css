@@ -1,8 +1,183 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 body {
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: "Manrope", sans-serif;
   font-size: 15px;
+  background-color: #fafbff;
+}
+
+.page {
+  padding: 100px 0px;
+  background: url("images/bg-pattern.svg");
+  background-repeat: no-repeat;
+  background-origin: top;
+}
+
+#header {
+  height: 160px;
+  background: url("images/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #858fad;
+}
+#header .header__title h3 {
+  font-size: 19px;
+  color: #293356;
+}
+#header .header__content p {
+  margin: 10px;
+}
+
+#main .card {
+  background: white;
+  margin: 30px 16px;
+  padding: 0 16px;
+  border-radius: 6px;
+  box-shadow: 0px 4px 8px 1px rgba(41, 51, 86, 0.19);
+  -webkit-box-shadow: 0px 4px 8px 1px rgba(41, 51, 86, 0.19);
+  -moz-box-shadow: 0px 4px 8px 1px rgba(41, 51, 86, 0.19);
+}
+#main .card .card__content {
+  text-align: center;
+}
+#main .card .card__content .card__content-title,
+#main .card .card__content .card__content-input,
+#main .card .card__content .card__content-price {
+  padding-top: 40px;
+}
+#main .card .card__content-options {
+  padding: 40px 0;
+  display: flex;
+  justify-content: space-around;
+}
+#main .card .card__content-options p {
+  display: inline;
+}
+#main .card .card__content-options p:last-child {
+  display: none;
+}
+#main .card .card__footer {
+  text-align: center;
+}
+#main .card .card__footer .card__footer-list,
+#main .card .card__footer .card__footer-button {
+  padding-bottom: 40px;
+}
+#main .card .card__footer .card__footer-list li {
+  padding-bottom: 15px;
+}
+#main .card .card__footer .card__footer-list p {
+  display: inline;
+  padding-left: 15px;
+}
+
+.btn {
+  padding: 16px 64px;
+  text-align: center;
+  color: white;
+  background: #293356;
+  border-radius: 50px 50px 50px 50px;
+  border: 0;
+  font-weight: 800;
+}
+
+.btn--discount {
+  color: #ff8c66;
+  background: #feece7;
+  padding: 2px 9px;
+}
+
+.toggle {
+  display: block;
+  text-align: center;
+  user-select: none;
+}
+
+.toggle--checkbox {
+  display: none;
+}
+
+.toggle--btn {
+  display: block;
+  margin: 0 auto;
+  font-size: 1.4em;
+  transition: all 350ms ease-in;
+}
+.toggle--btn:hover {
+  cursor: pointer;
+}
+
+.toggle--btn, .toggle--btn:before, .toggle--btn:after,
+.toggle--checkbox,
+.toggle--checkbox:before,
+.toggle--checkbox:after,
+.toggle--feature,
+.toggle--feature:before,
+.toggle--feature:after {
+  transition: all 250ms ease-in;
+}
+.toggle--btn:before, .toggle--btn:after,
+.toggle--checkbox:before,
+.toggle--checkbox:after,
+.toggle--feature:before,
+.toggle--feature:after {
+  content: "";
+  display: block;
+}
+
+.toggle--daynight .toggle--btn {
+  position: relative;
+  height: 22px;
+  width: 45px;
+  border-radius: 22px;
+}
+.toggle--daynight .toggle--btn:before {
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+
+.toggle--daynight .toggle--btn {
+  background-color: #cdd7ee;
+}
+.toggle--daynight .toggle--btn:before {
+  background-color: #fff;
+}
+.toggle--daynight .toggle--checkbox:checked + .toggle--btn {
+  background-color: #10d5c2;
+}
+.toggle--daynight .toggle--checkbox:checked + .toggle--btn:before {
+  left: 23px;
+  background-color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

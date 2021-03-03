@@ -1,0 +1,24 @@
+#header {
+    height: 160px;
+    background: url('images/pattern-circles.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $grayish-blue;
+
+    .header__title {
+        h3 {
+            font-size: 19px;
+            color: $dark-desaturated-blue;
+        }
+    }
+
+    .header__content {
+        p {
+            margin: 10px;
+        }
+    }
+}
