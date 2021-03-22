@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Frontend Mentor | Interactive pricing component</title>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <header id="header">
+            <div class="header-title">
+                <h3>Simple, traffic-based pricing</h3>
+            </div>
+            <div class="header-content">
+                <p>Sign-up for our 30-day trial.</p>
+                <p>No credit card required.</p>
+            </div>
+        </header>
+        <!-- header -->
+
+        <section id="main">
+            <div id="app" class="card">
+                <div class="card-content">
+                    <div class="card-content-title">
+                        <h5>{{pageViews}}</h5>
+                    </div>
+                    <div class="card-content-range">
+                        <input v-model="package" class="input-range" type="range" min="1" max="5" value="3">
+                    </div>
+                    <div class="card-content-price">
+                        <p class="input-price"> $ {{printPrice}} /month </p>
+                    </div>
+                </div>
+                <div class="card-content-options">
+                    <p>Monthly Billing </p>
+                    <div class="card-content-checkbox">
+                        <div class="toggle toggle--daynight">
+                            <input v-model="yearlyBilling" type="checkbox" id="toggle--daynight" class="toggle--checkbox">
+                            <label class="toggle--btn" for="toggle--daynight">
+                                <span class="toggle--feature"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <p>Yearly Billing </p>
+                    <p class="btn btn--discount" >25%</p>
+                    <p>discount</p>
+                </div>
+              
+
+                <div class="card-footer">
+                    <div class="card-footer-list">
+                        <ul>
+                            <li>
+                                <img src="images/icon-check.svg" alt="">
+                                <p>Unlimited websites</p>
+                            </li>
+                            <li>
+                                <img src="images/icon-check.svg" alt="">
+                                <p>100% data ownership</p>
+                            </li>
+                            <li>
+                                <img src="images/icon-check.svg" alt="">
+                                <p>Email reports</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer-button">
+                        <button class="btn">Start my trial</button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <!-- section -->
+
+    </div>
+    <!-- .page -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+    	var app = new Vue({
+        el: "#app",
+        data: {
+          package: 3,
+          currentPackage: {},
+          price: 0,
+          pageViews: "",
+          yearlyBilling: false,
+          sliderClass: "slider-3",
+          packages: [
+            { id: 1, pageViews: "10K", price: 8 },
+            { id: 2, pageViews: "50K", price: 12 },
+            { id: 3, pageViews: "100K", price: 16 },
+            { id: 4, pageViews: "500K", price: 24 },
+            { id: 5, pageViews: "1M", price: 36 },
+          ],
+        },
+  methods: {
+    getPackage() {
+      this.currentPackage = this.packages.find((el) => {
+        return el.id == this.package;
+      });
+      this.price = this.yearlyBilling
+        ? (
+            this.currentPackage.price.toFixed(2) -
+            (this.currentPackage.price.toFixed(2) / 100) * 25
+          ).toFixed(2)
+        : this.currentPackage.price.toFixed(2);
+      this.pageViews = this.currentPackage.pageViews;
+      this.sliderClass = "slider-" + this.package;
+    },
+  },
+  mounted() {
+    this.getPackage();
+  },
+  watch: {
+    package: function () {
+      this.getPackage();
+    },
+    yearlyBilling: function () {
+      this.getPackage();
+    },
+  },
+  computed: {
+    printPrice() {
+      return this.price;
+    },
+    printViews() {
+      return this.currentPackage[0].pageViews;
+    },
+  },
+});
+    </script>
+
+</body>
+
+</html>
